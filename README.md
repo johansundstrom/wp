@@ -1,7 +1,27 @@
 # wp
 Wordpress och Bootstrap
 
-## notes
+## PHP test
+* Skapa test.php i ```wp-content/themes/<aktuell mapp>```
+```php
+<?php 
+  $variable = 'wp';
+  echo($variable);
+?>
+```
+* Prova funktion
+```php
+<?php 
+  function myFunction($data) {
+      $myValue = $data + 8;
+      echo "<p>" . $data . " + 8 = " . $myValue . "</p>";
+  }
+
+  myFunction(5);
+?>
+```
+
+## filer i wp
 * Alla filer tillsammans kallas ```theme files``` eller ```core files```
 * Theme files placeras i ```wp-content/themes/<mapp>``` övriga kan tas bort
 * Theme files består av
@@ -10,6 +30,7 @@ Wordpress och Bootstrap
   * ```functions.php``` PHP bibliotek (PHP-kod)
   * ```header.php``` avslutande HTML och kod
   * ```index.php``` mittre HTML och kod
+  * ```single.php``` en detaljsida ur en 
   * ```style.css``` stil
 * Gemensamt för alla PHP-filer är att dekan inledas med, syns i Wordpress
 ```php
@@ -18,6 +39,17 @@ Wordpress och Bootstrap
 Template Name: Beskrivning av innehåll
 */
 ?>
+```
+* Filen ```style.css``` inleds med 
+```css
+/*
+    Theme Name: Johans Tema
+    Theme URI: https://github.com/johansundstrom/wp/
+    Description: Ett Bootstrap Tema
+    Author: Johan Sundström
+    Author URI: https://github.com/johansundstrom
+    Version: 1.0
+*/
 ```
 
 ### header.php
@@ -49,27 +81,20 @@ Template Name: Beskrivning av innehåll
     </div>
 <?php endwhile; ?>
 ```
-    * ```<?php endif; ?>``` avslutar villkor för loop
-* ```<?php get_footer(); ?>```
+  * ```<?php endif; ?>``` avslutar villkor för loop
+* ```<?php get_footer(); ?>``` laddar in footermallen
 
-
-* test
+### footer.php
 ```php
-<?php 
-  $variable = 'dkkl';
-  echo($variable);
-?>
-
-
-
-* /wp-admin
-* /wp-content/themes
+    <?php wp_footer(); ?>
+</head>
+```
 
 ## Wp functions
 <?php bloginfo('name'); ?> - Webb namn
 
 
-## WP loop
+## WP loop - enkel version
 
 ```php
 <?php
@@ -95,19 +120,7 @@ Template Name: Beskrivning av innehåll
 get_header();
 ...
 get_footer();
-
 ``` 
-
-## CSS *Required
-
-* Innehållermeta-info för temaväljaren
-```css
-/*
-    Themne Name: Johans Tema
-    Author: Johan
-    Version: 1.0
-*/
-```
 
 
 * I head...
