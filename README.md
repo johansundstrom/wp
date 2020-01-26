@@ -49,7 +49,7 @@ Template Name: Beskrivning av innehåll
     </div>
 <?php endwhile; ?>
 ```
-  * ```<?php endif; ?>``` avslutar villkor för loop
+    * ```<?php endif; ?>``` avslutar villkor för loop
 * ```<?php get_footer(); ?>```
 
 
