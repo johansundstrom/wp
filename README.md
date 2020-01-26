@@ -11,8 +11,16 @@ Wordpress och Bootstrap
   * ```header.php``` avslutande HTML och kod
   * ```index.php``` mittre HTML och kod
   * ```style.css``` stil
+* Gemensamt för alla PHP-filer är att dekan inledas med, syns i Wordpress
+```php
+<?php
+/*
+Template Name: Beskrivning av innehåll
+*/
+?>
+```
 
-### Header.php
+### header.php
 * inledande HTML5
 * ```<html <?php language_attributes(); ?>>``` skapar "<html lang="sv-SE">" baserat på General Settings
 * ```<title><?php wp_title(); ?></title>``` dynamisk titelframställare
@@ -28,6 +36,19 @@ Wordpress och Bootstrap
 <?php wp_nav_menu( array('menu' => 'Main', 'menu_class' => 'nav navbar-nav navbar-right', 'depth'=> 3, 'container'=> false, 'walker'=> new Bootstrap_Walker_Nav_Menu)); ?>
 ```
 
+### index.php
+* ```<?php get_header(); ?>``` laddar in headermallen
+* Loopen
+  * ```<?php if(have_posts()) : ?>``` villkor för iteration
+  * Loopen
+```php
+<?php while(have_posts()) : the_post(); ?>
+    <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <?php the_title('<h2>','</h2>'); ?>
+        <?php the_content(); ?>
+    </div>
+<?php endwhile; ?>
+```
 
 
 
