@@ -1,2 +1,106 @@
 # wp
-WP
+Wordpress och Bootstrap
+
+## notes
+* Alla filer tillsammans kallas ```theme files``` eller ```core files```
+* Theme files placeras i ```wp-content/themes/<mapp>``` övriga kan tas bort
+* Theme files består av
+  * ```comments.php``` 
+  * ```footer.php``` inledande HTML och kod
+  * ```functions.php``` PHP bibliotek (PHP-kod)
+  * ```header.php``` avslutande HTML och kod
+  * ```index.php``` mittre HTML och kod
+  * ```style.css``` stil
+
+### Header.php
+* inledande HTML5
+* ```<html <?php language_attributes(); ?>>``` skapar "<html lang="sv-SE">" baserat på General Settings
+* ```<title><?php wp_title(); ?></title>``` dynamisk titelframställare
+* ```<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />``` meddelar andra bloggare om publicering 
+* ```php 
+    <?php wp_head(); ?>
+        </head>
+```
+Läser in header.php
+
+
+* test
+```php
+<?php 
+  $variable = 'dkkl';
+  echo($variable);
+?>
+
+
+
+* /wp-admin
+* /wp-content/themes
+
+## Wp functions
+<?php bloginfo('name'); ?> - Webb namn
+
+
+## WP loop
+
+```php
+<?php
+    //loop av alla posts
+    while(have_posts()) {
+        //aktuell post i loopen
+        the_post(); ?>
+        <!-- länk till aktuell post, titel och content-->
+        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+        <?php the_content(); ?>
+        <hr>
+        <?php
+    }
+?>
+```
+* Filen single.php söks av WP för att visa single posts
+* Skillnader mellan posts och pages men de hamnar på urls
+
+## header
+* skapa ```header.php``` och ```footer.php```
+* Peta in i page.php och posts.php...
+```php
+get_header();
+...
+get_footer();
+
+``` 
+
+## CSS *Required
+
+* Innehållermeta-info för temaväljaren
+```css
+/*
+    Themne Name: Johans Tema
+    Author: Johan
+    Version: 1.0
+*/
+```
+
+
+* I head...
+
+```functions.php```
+```<?php wp_head(); ?>```
+
+
+## filen Functions.php
+
+```php
+<?php 
+    function johan_files() {
+        //
+        wp_enqueue_style('johan_styles', get_stylesheet_uri());
+    }
+    add_action('wp_enqueue_scripts', 'johan_files');
+?>
+```
+
+## Ett nytt tema
+### index.php
+```php
+
+```
