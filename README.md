@@ -41,14 +41,15 @@ Template Name: Beskrivning av innehåll
 * Loopen
   * ```<?php if(have_posts()) : ?>``` villkor för iteration
   * Loopen
-```php
-<?php while(have_posts()) : the_post(); ?>
-    <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        <?php the_title('<h2>','</h2>'); ?>
-        <?php the_content(); ?>
-    </div>
-<?php endwhile; ?>
-```
+        ```php
+        <?php while(have_posts()) : the_post(); ?>
+            <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                <?php the_title('<h2>','</h2>'); ?>
+                <?php the_content(); ?>
+            </div>
+        <?php endwhile; ?>
+        ```
+  * ```<?php endif; ?>``` avslutar villkor för loop
 
 
 
