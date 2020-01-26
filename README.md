@@ -18,9 +18,9 @@ Wordpress och Bootstrap
 * ```<title><?php wp_title(); ?></title>``` dynamisk titelframställare
 * ```<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />``` meddelar andra bloggare om publicering 
 * Triggar head... 
-  ```php 
+```php
     <?php wp_head(); ?>
-        </head>
+</head>
 ```
 * ```<body <?php body_class(isset($class) ? $class : ''); ?>>``` Sätter CSS klasser på BODY
 * Special för Bootstrap
