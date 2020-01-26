@@ -17,11 +17,18 @@ Wordpress och Bootstrap
 * ```<html <?php language_attributes(); ?>>``` skapar "<html lang="sv-SE">" baserat på General Settings
 * ```<title><?php wp_title(); ?></title>``` dynamisk titelframställare
 * ```<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />``` meddelar andra bloggare om publicering 
-* ```php 
+* Triggar head... 
+  ```php 
     <?php wp_head(); ?>
         </head>
 ```
-Läser in header.php
+* ```<body <?php body_class(isset($class) ? $class : ''); ?>>``` Sätter CSS klasser på BODY
+* Special för Bootstrap
+```
+<?php wp_nav_menu( array('menu' => 'Main', 'menu_class' => 'nav navbar-nav navbar-right', 'depth'=> 3, 'container'=> false, 'walker'=> new Bootstrap_Walker_Nav_Menu)); ?>
+```
+
+
 
 
 * test
