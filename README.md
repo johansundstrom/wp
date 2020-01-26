@@ -39,7 +39,7 @@ Template Name: Beskrivning av innehåll
 ### index.php
 * ```<?php get_header(); ?>``` laddar in headermallen
 * Loopen
-  * ```<?php if(have_posts()) : ?>``` villkor för iteration
+  * ```<?php if(have_posts()) : ?>``` villkor för loop
   * Loopen
 ```php
 <?php while(have_posts()) : the_post(); ?>
@@ -50,7 +50,7 @@ Template Name: Beskrivning av innehåll
 <?php endwhile; ?>
 ```
   * ```<?php endif; ?>``` avslutar villkor för loop
-
+* ```<?php get_footer(); ?>```
 
 
 * test
