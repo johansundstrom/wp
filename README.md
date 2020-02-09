@@ -22,7 +22,7 @@ Wordpress och Bootstrap
 ```
 
 ## filer i wp
-* Alla filer tillsammans kallas ```theme files``` eller ```core files```
+* Alla privata filer tillsammans kallas ```theme files``` öcriga ```core files```
 * Theme files placeras i ```wp-content/themes/<mapp>``` övriga kan tas bort
 * Theme files består av
   * ```comments.php``` 
