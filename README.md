@@ -5,8 +5,8 @@ Wordpress och Bootstrap
 * Skapa test.php i ```wp-content/themes/<aktuell mapp>```
 ```php
 <?php 
-  $variable = 'wp';
-  echo($variable);
+  $variable = 'WordPress';
+  echo($variable . " ver. " . $wp_version);
 ?>
 ```
 * Prova funktion
