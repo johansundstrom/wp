@@ -26,9 +26,9 @@ Wordpress och Bootstrap
 * Theme files placeras i ```wp-content/themes/<mapp>``` övriga kan tas bort
 * Theme files består av
   * ```comments.php``` 
-  * ```footer.php``` inledande HTML och kod
+  * ```footer.php``` avslutande HTML och kod
   * ```functions.php``` PHP bibliotek (PHP-kod)
-  * ```header.php``` avslutande HTML och kod
+  * ```header.php``` inledande HTML och kod
   * ```index.php``` mittre HTML och kod
   * ```single.php``` en detaljsida ur en 
   * ```style.css``` stil
